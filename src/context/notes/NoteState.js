@@ -16,6 +16,7 @@ const NoteState = ({ children }) => {
 
     const [notes, setNotes] = useState(notesInitial)
 
+
     // Add a note
     const addNote = (title, description, tag) => {
         const note = {
@@ -33,7 +34,7 @@ const NoteState = ({ children }) => {
     // Delete a note
     const deleteNote = (id) => {
         console.log("deleting note with id", id)
-
+        setNotes(notes.filter((note) => { return note._id !== id }))
     }
 
     // Edit a note
